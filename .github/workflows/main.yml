@@ -8,6 +8,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest # Using linux machine
+    environment: Production
     steps:
       - name: Checkout repo content
         uses: actions/checkout@v2 # checkout the repository content to github runner
