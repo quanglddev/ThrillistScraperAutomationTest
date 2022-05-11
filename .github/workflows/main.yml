@@ -8,7 +8,14 @@ on:
 jobs:
   deployment:
     runs-on: ubuntu-latest # Using linux machine
-    environment: Production
+    env:
+      GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+      TWILIO_SID: ${{ secrets.TWILIO_SID }}
+      TWILIO_TOKEN: ${{ secrets.TWILIO_TOKEN }}
+      TWILIO_VIRTUAL_PHONE_NO: ${{ secrets.TWILIO_VIRTUAL_PHONE_NO }}
+      MY_PHONE_NO: ${{ secrets.MY_PHONE_NO }}
+      MY_CITY: ${{ secrets.MY_CITY }}
+      HOME_ADDRESS: ${{ secrets.HOME_ADDRESS }}
     steps:
       - name: Checkout repo content
         uses: actions/checkout@v2 # checkout the repository content to github runner
